@@ -15,7 +15,7 @@ const WebSection = () => (
         </div>
 
         {/* Right Content */}
-        <div className="flex-1 max-w-4xl text-center md:text-left">
+        <div className="flex-1 max-w-[516px] justify-center md:text-left">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6">
                 <span className="text-[#1090CB]">Lorem Ipsum</span> <br />
                 is simply dummy text of the printing.

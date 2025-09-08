@@ -4,7 +4,7 @@ import star from "../assets/star 1.png";
 import pai from "../assets/pai chart 1.png";
 
 const Subscribe = () => (
-    <section className="relative w-full min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-[#f3f6fd] to-[#eaf6fb] px-6 sm:px-10 md:px-16 lg:px-24 xl:px-32 2xl:px-40 py-24 text-center max-w-screen-2xl mx-auto">
+    <section className="relative w-full min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-[#f3f6fd] to-[#eaf6fb] px-6 sm:px-10 md:px-16 lg:px-24 xl:px-32 2xl:px-40 py-24 text-center max-w-screen-full mx-auto">
 
         {/* Decorative Images */}
         <img

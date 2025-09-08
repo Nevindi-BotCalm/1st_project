@@ -12,12 +12,12 @@ const features = [
 ];
 
 const FeaturesSection = () => (
-    <div className="w-full flex flex-col items-center justify-center text-center px-6 sm:px-10 md:px-16 lg:px-24 xl:px-32 2xl:px-40 max-w-screen-2xl mx-auto py-12">
+    <div className="w-full flex flex-col items-center justify-center text-center px-6 sm:px-10 md:px-16 lg:px-24 xl:px-32 2xl:px-40 py-12 max-w-screen-2xl mx-auto">
 
         {/* Features Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 w-full mb-12">
             {features.map((f, i) => (
-                <div key={i} className="flex items-center p-4 text-left bg-white rounded-2xl shadow-sm hover:shadow-md transition">
+                <div key={i} className="flex items-center p-4 text-left ">
                     <div
                         className="w-20 h-20 rounded-3xl flex items-center justify-center shrink-0"
                         style={{ backgroundColor: f.bgColor }}
@@ -32,12 +32,12 @@ const FeaturesSection = () => (
             ))}
         </div>
 
-        {/* Heading */}
+
         <p className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight mb-6 text-black">
             Lorem Ipsum is simply dummy text of the printing.
         </p>
 
-        {/* Paragraph */}
+
         <p className="text-gray-600 max-w-2xl mx-auto mb-8 text-sm sm:text-base md:text-lg leading-relaxed">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br />
             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
