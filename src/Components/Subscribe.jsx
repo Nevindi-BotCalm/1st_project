@@ -4,19 +4,18 @@ import star from "../assets/star 1.png";
 import pai from "../assets/pai chart 1.png";
 
 const Subscribe = () => (
-    <section className="relative w-full min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-[#f3f6fd] to-[#eaf6fb] px-6 sm:px-10 md:px-16 lg:px-24 xl:px-32 2xl:px-40 py-24 text-center max-w-screen-full mx-auto">
-
+    <section id="contact" className="relative w-full flex flex-col items-center justify-center bg-[#1090CB1A] px-6 sm:px-10 md:px-16 lg:px-24 xl:px-32 2xl:px-40 py-16 md:py-24 text-center max-w-8xls mx-auto">
         {/* Decorative Images */}
         <img
             src={star}
             alt="Star"
-            className="absolute top-4 left-16 sm:left-32 md:left-48 lg:left-64 w-12 sm:w-16 md:w-20 h-auto"
+            className="absolute top-4 left-10 sm:left-20 md:left-32 lg:left-48 w-10 sm:w-14 md:w-16 h-auto"
         />
 
         <img
             src={pai}
             alt="Pie Chart"
-            className="absolute top-8 right-16 sm:right-32 md:right-48 lg:right-64 w-10 sm:w-12 md:w-16 h-auto"
+            className="absolute top-6 right-10 sm:right-20 md:right-32 lg:right-48 w-8 sm:w-12 md:w-14 h-auto"
         />
 
         {/* Heading */}
@@ -25,11 +24,7 @@ const Subscribe = () => (
             text of the printing.
         </h2>
 
-        {/* Description */}
-        <p className="text-gray-600 mb-12 max-w-2xl text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">
-            Subscribe to our newsletter to get the latest updates, news, and exclusive offers directly to your inbox.
-        </p>
-
+      
         {/* Subscription Form */}
         <div className="flex flex-col sm:flex-row gap-4 w-full max-w-lg">
             <input

@@ -1,64 +1,115 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [active, setActive] = useState("home");
+
+  const navLinks = [
+    { id: "home", label: "Home" },
+    { id: "about", label: "About Us" },
+    { id: "services", label: "Services" },
+    { id: "blog", label: "Blog" },
+  ];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = document.querySelectorAll("section");
+      let current = "home";
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 120;
+        const sectionHeight = section.clientHeight;
+        if (
+          window.scrollY >= sectionTop &&
+          window.scrollY < sectionTop + sectionHeight
+        ) {
+          current = section.getAttribute("id");
+        }
+      });
+      setActive(current);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <div>
-      <nav className="w-full fixed flex font-bold items-center  justify-between px-90 py-4  bg-white z-1000">
+    <header className="w-full fixed top-0 left-0 z-1000 bg-white shadow-md">
+      <div className="flex justify-between items-center px-6 md:px-16 py-4 container mx-auto">
         {/* Logo */}
-        <div className="text-2xl font-bold text-sky-600">LOGO</div>
+        <div className="flex-1 text-left md:text-left">
+          <div className="text-2xl font-bold text-sky-600">LOGO</div>
+        </div>
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex items-center space-x-6 font-semibold ml-auto">
-          <a href="#home" className="text-[#1090CB] hover:text-sky-700 transition">
-            Home
-          </a>
-          <a href="#about" className="hover:text-sky-700 transition">About us</a>
-          <a href="#services" className="hover:text-sky-700 transition">Services</a>
-          <a href="#blog" className="hover:text-sky-700 transition">Blog</a>
-          <button className="bg-sky-600 text-white px-4 py-2 rounded-md hover:bg-sky-700 transition">
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center space-x-8 font-semibold relative">
+          {navLinks.map((link) => (
+            <div key={link.id} className="relative">
+              {/* Dot Indicator */}
+              {active === link.id && (
+                <span className="absolute -top-2 left-0 w-2 h-2 bg-[#08D3BB] rounded-full"></span>
+              )}
+              <a
+                href={`#${link.id}`}
+                className={`transition hover:text-sky-700 ${active === link.id ? "text-[#1090CB]" : "text-gray-700"
+                  }`}
+              >
+                {link.label}
+              </a>
+            </div>
+          ))}
+          <button className="bg-sky-600 text-white px-5 py-2 rounded-md hover:bg-sky-700 transition">
             Contact Us
           </button>
-        </div>
+        </nav>
 
-        {/* Mobile Menu */}
-        <div className="md:hidden ml-auto">
-          <button onClick={() => setIsOpen(!isOpen)} className="text-sky-600">
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
-        </div>
-      </nav>
+        {/* Mobile Toggle Button */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="md:hidden text-sky-600 focus:outline-none"
+        >
+          {isOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
+      </div>
+
+     
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40"
+          onClick={() => setIsOpen(false)} //background blur
+        ></div>
+      )}
+
+
 
       {/* Mobile Dropdown */}
       {isOpen && (
-        <div className="md:hidden flex flex-col items-center space-y-4 py-6 bg-white shadow-md font-semibold max-w-screen-2xl mx-auto px-6 sm:px-10 md:px-16 lg:px-24 xl:px-32">
-          <a
-            href="#home"
-            className="text-[#1090CB] hover:text-sky-700 transition"
-            onClick={() => setIsOpen(false)}
-          >
-            Home
-          </a>
-          <a href="#about" className="hover:text-sky-700 transition" onClick={() => setIsOpen(false)}>
-            About us
-          </a>
-          <a href="#services" className="hover:text-sky-700 transition" onClick={() => setIsOpen(false)}>
-            Services
-          </a>
-          <a href="#blog" className="hover:text-sky-700 transition" onClick={() => setIsOpen(false)}>
-            Blog
-          </a>
-          <button
-            className="bg-sky-600 text-white px-4 py-2 rounded-md hover:bg-sky-700 transition"
-            onClick={() => setIsOpen(false)}
-          >
-            Contact Us
-          </button>
+        <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-lg font-semibold z-50">
+          <div className="flex flex-col items-center space-y-6 py-8 px-6">
+            {navLinks.map((link) => (
+              <a
+                key={link.id}
+                href={`#${link.id}`}
+                className={`w-full text-center text-lg py-2 rounded-md transition ${active === link.id ? "text-[#1090CB] bg-sky-50" : "text-gray-700"
+                  }`}
+                onClick={() => {
+                  setActive(link.id);
+                  setIsOpen(false);
+                }}
+              >
+                {link.label}
+              </a>
+            ))}
+            <button
+              className="w-full bg-sky-600 text-white text-lg px-4 py-3 rounded-md hover:bg-sky-700 transition"
+              onClick={() => setIsOpen(false)}
+            >
+              Contact Us
+            </button>
+          </div>
         </div>
       )}
-    </div>
+    </header>
   );
 };
 
