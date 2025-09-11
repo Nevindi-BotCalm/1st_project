@@ -44,9 +44,11 @@ const FeaturesSection = () => (
 
         <hr className="border-t border-gray-300 mt-auto  my-8 w-screen -mx-6 sm:-mx-10 md:-mx-16 lg:-mx-24 xl:-mx-32 2xl:-mx-40" />
 
-        <p className="text-[26px]  mt-auto md:text-4xl font-semibold sm:text-[23px] leading-tight mb-6 text-black">
+        <p className="text-[18px] sm:text-[20px] md:text-2xl lg:text-3xl xl:text-4xl font-semibold leading-snug sm:leading-snug md:leading-tight lg:leading-tight mb-4 sm:mb-5 md:mb-6 ">
             Lorem Ipsum is simply dummy text of the printing.
         </p>
+
+
 
         <p className="text-gray-600   max-w-2xl mx-auto mb-8 text-sm sm:text-center md:text-lg leading-relaxed">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br />

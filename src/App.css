@@ -1,2 +1,80 @@
 @import "tailwindcss";
 @import "@fortawesome/fontawesome-free/css/all.min.css";
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* App.css */
+
+/* Floating bounce for the star */
+@keyframes bounce-slow {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+.animate-bounce-slow {
+    animation: bounce-slow 2.5s infinite;
+}
+
+/* Slow spin for the pie chart */
+@keyframes spin-slow {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-spin-slow {
+    animation: spin-slow 6s linear infinite;
+}
+
+/* subcription texts */
+
+
+/* Floating + subtle tilt animation for H2 */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.text-interactive {
+    display: inline-block;
+    transition: transform 0.2s ease;
+    animation: float 3s ease-in-out infinite;
+    cursor: pointer;
+}
+
+/* Fade + Slide Up Animation */
+@keyframes fade-up {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.animate-fade-up {
+    animation: fade-up 0.8s ease-out forwards;
+}

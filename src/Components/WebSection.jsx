@@ -4,10 +4,9 @@ import Group27 from "../assets/Group 27.png";
 import happy from "../assets/happy 1.png";
 
 const WebSection = () => (
-    <section 
+    <section
 
-        className="w-full flex flex-col md:flex-row items-center justify-between px-6 sm:px-10 md:px-16 lg:px-24 xl:px-32 2xl:px-40 py-8 md:py-12 max-w-screen-2xl mx-auto gap-10
-             -mt-[150px] sm:-mt-12 md:-mt-24 lg:-mt-32 xl:-mt-10"
+        className="w-full flex flex-col md:flex-row items-center justify-between px-6 sm:px-10 md:px-16 lg:px-24 xl:px-32 2xl:px-40 py-8 md:py-12 max-w-screen-2xl mx-auto gap-10 -mt-[150px] sm:-mt-12 md:-mt-24 lg:-mt-32 xl:-mt-10"
     >
 
         <div className="flex flex-col md:flex-row items-center md:items-start w-full gap-10">

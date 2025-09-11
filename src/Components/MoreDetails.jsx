@@ -35,8 +35,6 @@ const MoreDetails = () => (
             <div
                 key={square.id}
                 className={`${square.bgColor} rounded-xl shadow-md flex flex-col items-center text-center w-full md:w-1/2 max-w-[572px] min-h-[400px] p-6`}
-
-
             >
                 <h2 className={`${square.textColor} text-2xl sm:text-3xl font-bold mt-10 mb-4 whitespace-pre-line`}>
                     {square.title}
@@ -46,14 +44,13 @@ const MoreDetails = () => (
                     {square.description}
                 </p>
                 <div className="flex gap-4">
+
                     <button
-                        className={`${square.buttonClass} px-4 py-2 rounded-lg text-base sm:text-lg hover:bg-[#0d7fb0] hover:scale-105 hover:shadow-lg 
-  active:scale-95 active:bg-[#0c6e96] 
-  focus:ring-2 focus:ring-sky-300 
-  "`}
+                        className={`${square.buttonClass} px-4 py-2 cursor-pointer rounded-lg text-base sm:text-lgtransform transition-transform duration-300hover:bg-[#0d7fb0] hover:scale-105 hover:shadow-lgactive:scale-95 active:bg-[#0c6e96] focus:ring-2 focus:ring-sky-300`}
                     >
                         {square.buttonText}
                     </button>
+
                 </div>
             </div>
         ))}

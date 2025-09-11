@@ -19,10 +19,7 @@ const Header = () => {
       sections.forEach((section) => {
         const sectionTop = section.offsetTop - 120;
         const sectionHeight = section.clientHeight;
-        if (
-          window.scrollY >= sectionTop &&
-          window.scrollY < sectionTop + sectionHeight
-        ) {
+        if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
           current = section.getAttribute("id");
         }
       });
@@ -35,9 +32,10 @@ const Header = () => {
 
   return (
     <header className="w-full fixed top-0 left-0 z-1000 bg-white shadow-md">
-      <div className="flex justify-between items-center px-6 md:px-16 py-4 container mx-auto">
+      <div className="flex justify-between items-center px-6 md:px-16 lg:pr-1 py-4 container mx-auto">
+
         {/* Logo */}
-        <div className="flex-1 text-left md:text-left">
+        <div className="flex-1 text-left md:text-left z-500">
           <div className="text-2xl font-bold text-sky-600">LOGO</div>
         </div>
 
@@ -45,47 +43,54 @@ const Header = () => {
         <nav className="hidden md:flex items-center space-x-8 font-semibold relative">
           {navLinks.map((link) => (
             <div key={link.id} className="relative">
-              {/* Dot Indicator */}
               {active === link.id && (
                 <span className="absolute -top-2 left-0 w-2 h-2 bg-[#08D3BB] rounded-full"></span>
               )}
               <a
                 href={`#${link.id}`}
-                className={`transition hover:text-sky-700 ${active === link.id ? "text-[#1090CB]" : "text-gray-700"
-                  }`}
+                className={`transition hover:text-sky-700 ${active === link.id ? "text-[#1090CB]" : "text-gray-700"}`}
               >
                 {link.label}
               </a>
             </div>
           ))}
-          <button className="bg-sky-600 text-white px-5 py-2 rounded-md hover:bg-sky-700 transition">
+          <button
+            className="bg-sky-600 text-white px-5 py-2 rounded-md  hover:bg-sky-700 transform hover:scale-105 hover:shadow-lg active:scale-95 transition-transform  duration-300">
             Contact Us
           </button>
         </nav>
 
         {/* Mobile Toggle Button */}
         <button
-          onClick={() => setIsOpen(!isOpen)}
+          onClick={() => setIsOpen(true)}
           className="md:hidden text-sky-600 focus:outline-none"
         >
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
+          <Menu size={28} />
         </button>
       </div>
 
-     
+      {/* Overlay Background */}
       {isOpen && (
         <div
           className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40"
-          onClick={() => setIsOpen(false)} //background blur
+          onClick={() => setIsOpen(false)}
         ></div>
       )}
 
-
-
       {/* Mobile Dropdown */}
       {isOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-lg font-semibold z-50">
-          <div className="flex flex-col items-center space-y-6 py-8 px-6">
+        <div className="md:hidden fixed inset-0 w-full h-screen bg-white shadow-lg font-semibold z-50 flex flex-col overflow-y-auto">
+          {/* Close Button */}
+          <div className="flex justify-end p-6">
+            <button
+              onClick={() => setIsOpen(false)}
+              className="text-sky-600 focus:outline-none"
+            >
+              <X size={28} />
+            </button>
+          </div>
+
+          <div className="flex flex-col items-center space-y-6 py-8 px-6 flex-1">
             {navLinks.map((link) => (
               <a
                 key={link.id}
@@ -109,6 +114,7 @@ const Header = () => {
           </div>
         </div>
       )}
+
     </header>
   );
 };
