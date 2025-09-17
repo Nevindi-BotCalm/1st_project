@@ -11,50 +11,56 @@ const features = [
     { icon: asset26, alt: "Feature 4", bgColor: "#FFE5DA", text: "Mobile Applications", description: "Lorem Ipsum is simply" },
 ];
 
-const FeaturesSection = () => (
+const FeaturesSection = () => {
+
+  return (
 
     <section
         id="about"
-        className="w-full flex flex-col items-center justify-left text-center px-6 sm:px-10 md:px-16 lg:px-24 xl:px-32 2xl:px-40 py-12 max-w-screen-8xl container mx-auto "
-    >
+        className="w-full flex flex-col items-center text-center px-4 sm:px-6 md:px-12 lg:px-16 xl:px-20 2xl:px-40 py-12 max-w-screen-2xl mx-auto">
         {/* Features Grid */}
-        <div className="grid w-full mb-12 justify-left grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-[repeat(auto-fit,minmax(250px,1fr))] justify-items-left">
+        <div className="w-full grid gap-6 sm:gap-8 md:gap-6 grid-cols-1 sm:grid-cols-2 xl:grid-cols-4">
             {features.map((f, i) => (
                 <div
                     key={i}
-                    className="flex items-center p-4 text-left bg-white w-full max-w-[300px]"
+                    className="flex items-start sm:items-center p-4 sm:p-5 md:p-6 bg-white w-full "
                 >
                     <div
-                        className="w-20 h-20 rounded-3xl flex items-center justify-center shrink-0"
+                        className="w-16 h-16 sm:w-20 sm:h-20 rounded-3xl flex items-center justify-center flex-shrink-0"
                         style={{ backgroundColor: f.bgColor }}
                     >
                         <img src={f.icon} alt={f.alt} className="w-10 h-auto" />
                     </div>
-                    <div className="ml-4">
-                        <p className="text-black font-bold text-base sm:text-lg mb-1">
+                    <div className="ml-4 flex-1 text-left">
+                        <p className="text-[16px] sm:text-[18px] md:text-[18px] font-medium text-black mb-1 truncate">
                             {f.text}
                         </p>
-                        <p className="text-gray-600 text-sm sm:text-base">
+                        <p className="text-gray-600 text-sm sm:text-base md:text-[16px] leading-relaxed truncate">
                             {f.description}
                         </p>
                     </div>
+
                 </div>
             ))}
         </div>
 
-        <hr className="border-t border-gray-300 mt-auto  my-8 w-screen -mx-6 sm:-mx-10 md:-mx-16 lg:-mx-24 xl:-mx-32 2xl:-mx-40" />
+        {/* Divider */}
+       <hr className="border-t border-gray-300 my-8 w-full max-w-7xl" />
 
-        <p className="text-[18px] sm:text-[20px] md:text-2xl lg:text-3xl xl:text-4xl font-semibold leading-snug sm:leading-snug md:leading-tight lg:leading-tight mb-4 sm:mb-5 md:mb-6 ">
+
+
+        {/* Heading */}
+        <p className="text-[18px] sm:text-[20px] md:text-2xl lg:text-3xl xl:text-4xl font-semibold leading-snug mb-4 sm:mb-5 md:mb-6">
             Lorem Ipsum is simply dummy text of the printing.
         </p>
 
-
-
-        <p className="text-gray-600   max-w-2xl mx-auto mb-8 text-sm sm:text-center md:text-lg leading-relaxed">
+        {/* Description */}
+        <p className="text-gray-600 max-w-2xl mx-auto mb-8 text-sm sm:text-base md:text-lg leading-relaxed">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br />
-            Lorem Ipsum has been the industry's
+            Lorem Ipsum has been the industry's standard dummy text.
         </p>
     </section>
-);
+  );
+};
 
 export default FeaturesSection;

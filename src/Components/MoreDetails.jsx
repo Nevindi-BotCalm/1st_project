@@ -27,30 +27,23 @@ const squares = [
 const MoreDetails = () => (
     <section
         id="blog"
-        className="w-full flex flex-col md:flex-row px-6 sm:px-10 md:px-16 lg:px-24 xl:px-32 2xl:px-40 py-12 mt-4 md:mt-8 max-w-screen-2xl mx-auto justify-center items-center gap-6"
+        className="w-full flex flex-col md:flex-row px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 sm:py-12 mt-8 md:mt-12 max-w-7xl mx-auto justify-center items-stretch gap-6 md:gap-8"
     >
-
-
         {squares.map((square) => (
             <div
                 key={square.id}
-                className={`${square.bgColor} rounded-xl shadow-md flex flex-col items-center text-center w-full md:w-1/2 max-w-[572px] min-h-[400px] p-6`}
+                className={`${square.bgColor} rounded-xl shadow-md flex flex-col items-center justify-center text-center w-full md:w-1/2 min-h-[350px] sm:min-h-[400px] p-6 sm:p-8 transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-2xl active:scale-95`}
             >
-                <h2 className={`${square.textColor} text-2xl sm:text-3xl font-bold mt-10 mb-4 whitespace-pre-line`}>
-                    {square.title}
-                </h2>
+               <h2 className={`${square.textColor} font-poppins font-semibold text-lg sm:text-xl md:text-2xl lg:text-3xl leading-relaxed text-center whitespace-pre-line mb-4 sm:mb-6`}>{square.title} </h2>
 
-                <p className={`${square.textColor} text-sm sm:text-base md:text-base mb-6 leading-relaxed`}>
-                    {square.description}
-                </p>
+            <p className={`${square.textColor} text-sm sm:text-base leading-relaxed max-w-md mx-auto mb-6 sm:mb-8`}>{square.description}</p>
+
                 <div className="flex gap-4">
-
                     <button
-                        className={`${square.buttonClass} px-4 py-2 cursor-pointer rounded-lg text-base sm:text-lgtransform transition-transform duration-300hover:bg-[#0d7fb0] hover:scale-105 hover:shadow-lgactive:scale-95 active:bg-[#0c6e96] focus:ring-2 focus:ring-sky-300`}
+                        className={`${square.buttonClass} px-6 sm:px-8 py-3 cursor-pointer rounded-lg text-sm sm:text-base font-medium transform transition-transform duration-300 hover:scale-105 hover:shadow-lg active:scale-95 focus:ring-2 focus:ring-sky-300`}
                     >
                         {square.buttonText}
                     </button>
-
                 </div>
             </div>
         ))}

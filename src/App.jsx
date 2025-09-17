@@ -15,7 +15,7 @@ import Copyright from './Components/copyright';
 
 const App = () => {
   return (
-    <div className="app-container">
+    <div className="app-container font-poppins ">
       <Header />
       <HeroSection />
       <FeaturesSection />

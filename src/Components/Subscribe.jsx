@@ -20,24 +20,24 @@ const Subscribe = () => {
     return (
         <section
             id="contact"
-            className="relative w-full flex flex-col items-center justify-center bg-[#1090CB1A] px-6 sm:px-10 md:px-16 lg:px-24 xl:px-32 2xl:px-40 py-16 md:py-24 text-center max-w-8xls mx-auto"
+            className="relative w-full flex flex-col items-center justify-center bg-[#1090CB1A] px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-12 sm:py-16 md:py-20 text-center max-w-7xl mx-auto"
         >
             {/* Decorative Images */}
             <img
                 src={star}
                 alt="Star"
-                className="absolute top-0 left-10 sm:left-20 md:left-32 lg:left-48 w-10 sm:w-14 md:w-16 h-auto animate-bounce-slow"
+                className="absolute top-4 sm:top-6 md:top-8 left-4 sm:left-8 md:left-16 lg:left-24 w-8 sm:w-10 md:w-12 lg:w-14 h-auto animate-bounce-slow"
             />
 
             <img
                 src={pai}
                 alt="Pie Chart"
-                className="absolute top-6 right-10 sm:right-20 md:right-32 lg:right-48 w-8 sm:w-12 md:w-14 h-auto animate-spin-slow"
+                className="absolute top-8 sm:top-10 md:top-12 right-4 sm:right-8 md:right-16 lg:right-24 w-6 sm:w-8 md:w-10 lg:w-12 h-auto animate-spin-slow"
             />
 
             {/* Interactive Heading */}
             <h2
-                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-black leading-snug text-interactive"
+                className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold mb-6 sm:mb-8 text-black leading-snug text-interactive"
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
                 style={{
@@ -49,21 +49,27 @@ const Subscribe = () => {
             </h2>
 
             {/* Subscription Form */}
-            <div className="flex flex-col sm:flex-row gap-4 w-full max-w-lg">
-                {/* Email Input */}
-                <input
-                    type="email"
-                    placeholder="Enter your email"
-                    className="bg-white flex-1 px-5 py-3 rounded-lg border-1  border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#555656] focus:border-[#1090CB] placeholder-gray-400 shadow-sm transition-all duration-300 hover:shadow-md"
-                />
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full max-w-full sm:max-w-2xl mx-auto">
+  {/* Email Input */}
+  <input
+    type="email"
+    placeholder="Enter your email address here..."
+    className="flex-1 w-full sm:w-[550px] bg-white px-4 sm:px-5 py-3 rounded-lg border border-gray-300 
+               focus:outline-none focus:ring-2 focus:ring-[#555656] focus:border-[#1090CB] 
+               placeholder-gray-400 shadow-sm transition-all duration-300 hover:shadow-md 
+               text-sm sm:text-base"
+  />
 
-                {/* Subscribe Button */}
-                <button
-                    className="bg-[#000000] text-white px-6 py-3 rounded-lg hover:bg-[#343434] hover:scale-105 active:scale-95 transition-transform duration-300 text-base sm:text-lg font-semibold shadow-md hover:shadow-lg"
-                >
-                    Subscribe
-                </button>
-            </div>
+  {/* Subscribe Button */}
+  <button
+    className="bg-[#000000] text-white px-6 sm:px-8 py-3 rounded-lg hover:bg-[#343434] 
+               hover:scale-105 active:scale-95 transition-transform duration-300 text-sm sm:text-base 
+               font-semibold shadow-md hover:shadow-lg whitespace-nowrap mt-2 sm:mt-0"
+  >
+    Subscribe
+  </button>
+</div>
+
 
         </section>
     );

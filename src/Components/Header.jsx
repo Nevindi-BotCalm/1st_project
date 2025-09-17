@@ -31,16 +31,18 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="w-full fixed top-0 left-0 z-1000 bg-white shadow-md">
-      <div className="flex justify-between items-center px-6 md:px-16 lg:pr-1 py-4 container mx-auto">
+    <header className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
 
-        {/* Logo */}
-        <div className="flex-1 text-left md:text-left z-500">
-          <div className="text-2xl font-bold text-sky-600">LOGO</div>
-        </div>
+<div className="max-w-7xl mx-auto flex justify-between items-center px-6 md:px-16 lg:pr-1 py-4">
+
+
+       <div className="flex flex-1 text-left">
+  <div className="text-2xl font-bold text-sky-600">LOGO</div>
+</div>
+
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8 font-semibold relative">
+        <nav className="hidden md:flex items-center space-x-8 font-normal relative">
           {navLinks.map((link) => (
             <div key={link.id} className="relative">
               {active === link.id && (
@@ -119,4 +121,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Header; 

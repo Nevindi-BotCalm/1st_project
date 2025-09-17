@@ -1,36 +1,36 @@
 import React from "react";
 import "../App.css";
-import Group27 from "../assets/Group 27.png";
+import Frame23 from "../assets/Frame 23.png"
 import happy from "../assets/happy 1.png";
 
 const WebSection = () => (
     <section
 
-        className="w-full flex flex-col md:flex-row items-center justify-between px-6 sm:px-10 md:px-16 lg:px-24 xl:px-32 2xl:px-40 py-8 md:py-12 max-w-screen-2xl mx-auto gap-10 -mt-[150px] sm:-mt-12 md:-mt-24 lg:-mt-32 xl:-mt-10"
+        className="w-full flex flex-col md:flex-row items-center justify-between px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 md:py-12 max-w-7xl mx-auto gap-8 md:gap-10 mt-8 md:mt-16"
     >
 
         <div className="flex flex-col md:flex-row items-center md:items-start w-full gap-10">
 
             <img
-                src={Group27}
+                src={Frame23}
                 alt="Group"
-                className="w-full max-w-[300px] sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl h-auto object-contain sm:mt-[100px] order-2 lg:order-1"
+                className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-auto object-contain order-2 md:order-1"
             />
 
-            <div className="flex-1 text-center md:text-left order-1 lg:order-2">
+            <div className="flex-1 text-center md:text-left order-1 md:order-2">
 
-                <div className="flex sm:gap-[25px] gap-[10px] mt-[160px] text-left justify-center lg:justify-start">
+                <div className="flex gap-4 sm:gap-6 mt-8 md:mt-12 text-left justify-center md:justify-start">
 
-                    <div className="max-w-[60px] bg-[#1090CB] rounded-full p-[16px] ">
-                        <img src={happy} alt="image" className="w-[26px] h-[26px]   " />
+                    <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-[#1090CB] rounded-full p-3 sm:p-4 flex-shrink-0">
+                        <img src={happy} alt="image" className="w-full h-full object-contain" />
                     </div>
 
 
-                    <div className="max-w-[308px] h-[55px]">
-                        <h1 className="font-medium sm:text-[17px] text-[14px] leading-[175%]  ">
+                    <div className="flex-1 min-w-0">
+                        <h1 className="font-medium text-sm sm:text-base md:text-lg leading-relaxed">
                             Lorem ipsum is simply dummy text
                         </h1>
-                        <p className="font-normal text-[#868686]  sm:text-[14px] text-[11px] leading-[175%]">
+                        <p className="font-normal text-[#868686] text-xs sm:text-sm md:text-base leading-relaxed">
                             Lorem ipsum is simply dummy text
                         </p>
                     </div>
@@ -38,18 +38,18 @@ const WebSection = () => (
 
                 </div>
 
-                {/* Main heading */}
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mt-10 sm:mt-12">
-                    <span className="text-[#1090CB]">Lorem Ipsum</span> is simply dummy text of the printing.
+                <h1 className="font-semibold font-poppins text-gray-900 text-xl sm:text-2xl md:text-3xl lg:text-4xl text-center md:text-left my-6 md:my-10 leading-snug">
+                    <span className="text-[#1090CB]">Lorem Ipsum</span> is simply dummy <br />
+                    text of the printing.
                 </h1>
 
-                {/* Paragraph */}
-                <p className="mt-6 sm:mt-8 text-gray-500 text-base sm:text-lg md:text-xl font-medium max-w-lg mx-auto md:mx-0">
+                <p className="mt-4 sm:mt-6 md:mt-8 text-gray-500 font-normal font-poppins max-w-lg text-sm sm:text-base md:text-lg mx-auto md:mx-0 text-center md:text-left leading-relaxed">
                     KODEX TECHNOLOGY (PVT) LTD is a team of experienced mobile and web
                     applications and website builders with dozens of completed projects. We
                     build and develop mobile applications for several top platforms,
                     including Android & iOS.
                 </p>
+
             </div>
         </div>
     </section>

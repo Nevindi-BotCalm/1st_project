@@ -5,56 +5,58 @@ import elipse3 from "../assets/Ellipse 3.png";
 import happy from "../assets/happy 1.png";
 
 const VRSection = () => (
-    <section className="w-full flex flex-col md:flex-row items-center justify-between px-6 sm:px-10 md:px-16 lg:px-24 xl:px-32 2xl:px-40 py-1 max-w-screen-2xl mx-auto gap-10 -mt-16 md:-mt-10">
+    <section className="w-full flex flex-col md:flex-row items-center justify-between px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 md:py-12 max-w-7xl mx-auto gap-8 md:gap-10 mt-8 md:mt-16">
 
 
-       <div className="flex-1">
-       
-                       <div className="flex gap-[25px] mt-[160px]">
-                           <div className="max-w-[60px] bg-[#9208D3] rounded-full p-[16px] ">
-                               <img src={happy} alt="image" className="w-[26px] h-[26px]   " />
-                           </div>
-                           <div className="max-w-[308px] h-[55px]">
-                               <h1 className="font-medium sm:text-[17px] text-[14px] leading-[175%] ">
-                                   Lorem ipsum is simply dummy text
-                               </h1>
-       
-                             
-                               <p className="font-normal text-[#868686]  sm:text-[14px] text-[11px] leading-[175%]">
-                                   Lorem ipsum is simply dummy text
-                               </p>
-                           </div>
-                       </div>
-       
-       
-       
-                    <h1 className="text-3xl sm:text-4xl sm:text-left text-center  my-10 md:text-6xl font-bold text-gray-900 ">
-                       <span className="text-[#1090CB]">Lorem Ipsum</span> is simply dummy text of the printing.
-                   </h1>
-                   <p className="mt-6 sm:mt-8 text-gray-500 text-base sm:text-lg sm:text-left text-center font-medium max-w-lg mx-auto md:mx-0">
-                       KODEX TECHNOLOGY (PVT) LTD is a team of experienced mobile and web
-                       applications and website builders with dozens of completed projects. We
-                       build and develop mobile applications for several top platforms,
-                       including Android & iOS.
-                   </p>
-                   </div>
-       
+        <div className="flex-1">
+
+            <div className="flex gap-4 sm:gap-6 mt-8 md:mt-12">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-[#9208D3] rounded-full p-3 sm:p-4 flex-shrink-0">
+                    <img src={happy} alt="image" className="w-full h-full object-contain" />
+                </div>
+                <div className="flex-1 min-w-0">
+                    <h1 className="font-medium text-sm sm:text-base md:text-lg leading-relaxed">
+                        Lorem ipsum is simply dummy text
+                    </h1>
+
+
+                    <p className="font-normal text-[#868686] text-xs sm:text-sm md:text-base leading-relaxed">
+                        Lorem ipsum is simply dummy text
+                    </p>
+                </div>
+            </div>
+
+
+
+            <h1 className="font-semibold font-poppins text-gray-900 text-xl sm:text-2xl md:text-3xl lg:text-4xl text-center md:text-left my-6 md:my-10 leading-snug">
+                <span className="text-[#1090CB]">Lorem Ipsum</span> is simply dummy <br />
+                text of the printing.
+            </h1>
+
+            <p className="mt-4 sm:mt-6 md:mt-8 text-gray-500 font-normal font-poppins max-w-lg text-sm sm:text-base md:text-lg mx-auto md:mx-0 text-center md:text-left leading-relaxed">
+                KODEX TECHNOLOGY (PVT) LTD is a team of experienced mobile and web
+                applications and website builders with dozens of completed projects. We
+                build and develop mobile applications for several top platforms,
+                including Android & iOS.
+            </p>
+        </div>
+
 
         {/* Images */}
-        <div className="flex-1 flex flex-col justify-center items-center relative mt-10 md:mt-0">
+        <div className="flex-1 flex flex-col justify-center items-center relative mt-8 md:mt-0">
 
             {/* Decorative Ellipse */}
             <img
                 src={elipse3}
                 alt="Ellipse3"
-                className="absolute top-[80px] w-[200px] sm:w-[280px] md:w-[340px] lg:w-[400px] xl:w-[440px] z-0 opacity-100"
+                className="absolute top-12 sm:top-16 md:top-20 w-48 sm:w-64 md:w-80 lg:w-96 z-0 opacity-100"
             />
 
             {/* Main VR Image */}
             <img
                 src={vr}
-                alt="Mobile Illustration"
-                className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl 2xl:max-w-2xl h-auto z-10 mt-6"
+                alt="VR Illustration"
+                className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-auto z-10 mt-6"
             />
         </div>
     </section>
